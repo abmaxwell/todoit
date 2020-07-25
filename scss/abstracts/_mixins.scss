@@ -1,0 +1,65 @@
+// main: ../main.scss
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+@mixin border($width: 0.1rem, $style: solid, $color: #000000) {
+  -webkit-border: $width $style $color;
+  -moz-border: $width $style $color;
+  border: $width $style $color;
+}
+@mixin border-radius($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin border-radius-corners($top-radius, $right-radius, $bottom-radius, $left-radius) {
+  @if(($top-radius == $left-radius) and ($top-radius == $bottom-radius) and ($top-radius == $right-radius)) {
+    @include border-radius ($top-radius);
+  } @else {
+    -webkit-border-top-left-radius: $top-radius;
+    -webkit-border-top-right-radius: $right-radius;
+    -webkit-border-bottom-left-radius: $left-radius;
+    -moz-border-bottom-right-radius: $bottom-radius;
+    -moz-border-top-left-radius: $top-radius;
+    -moz-border-top-right-radius: $right-radius;
+    -moz-border-bottom-left-radius: $left-radius;
+    -moz-border-bottom-right-radius: $bottom-radius;
+    border-top-left-radius: $top-radius;
+    border-top-right-radius: $right-radius;
+    border-bottom-left-radius: $left-radius;
+    border-bottom-right-radius: $bottom-radius;
+  }
+}
+@mixin placeholder-color($color) {
+  // Update <tnput> placeholder text to match branding.
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $light-gray;
+    opacity: 1;
+    /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $light-gray;
+  }
+
+  ::-ms-input-placeholder {
+    color: $light-gray;
+  }
+}

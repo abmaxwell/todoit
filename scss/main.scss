@@ -1,0 +1,274 @@
+//compileCompressed: ../assets/css/styles.css
+/*******************************************************************************
+| BASE STYLES
+*******************************************************************************/
+// MAIN IMPORTS
+@import 'base/colors';
+@import 'base/typography';
+@import 'abstracts/mixins';
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.clear-float {
+  @include clearfix();
+}
+// Custom Checkbox
+
+.checkbox {
+  color: $light-gray;
+  display: inline-block;
+  font-size: 1.75em;
+  text-align: center;
+  vertical-align: middle;
+  /* Remove Default Button Styles*/
+  border: none;
+  background: none;
+}
+
+.checkbox:active,
+.checkbox:focus,
+.checkbox:hover {
+  color: $gray;
+  outline: 0;
+}
+/* Update global placeholder color */
+@include placeholder-color($light-gray);
+/*******************************************************************************
+| CONTAINER STYLES
+*******************************************************************************/
+.left-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $snow-white;
+}
+
+.right-container {
+  padding: 2vw;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $true-white;
+}
+/**************************
+LEFT CONTAINER CONTENT
+***************************/
+/****************
+LOGO
+*****************/
+.logo-container {
+  width: 80%;
+  max-width: 25rem;
+  display: block;
+  margin: 7rem auto;
+}
+/****************
+MYLISTS STYLES
+*****************/
+// MYLISTS: General List Styles
+
+.lists-header {
+  margin: 0 1rem 1rem;
+  color: $light-gray;
+  text-transform: uppercase;
+}
+
+.list {
+  padding: 0.5rem 0 0;
+}
+
+.list:hover {
+  background-color: $gray;
+  color: $snow-white;
+}
+// MYLISTS: List Icon & Button
+
+.btn-list {
+  font-family: $primary-font;
+  color: $gray;
+  font-size: 100%;
+  text-align: left;
+  text-transform: uppercase;
+  margin-left: 1rem;
+}
+
+.list:hover .btn-list {
+  color: $snow-white;
+  text-decoration: none;
+}
+
+.icon-wrapper {
+  display: inline-flex;
+  text-align: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  @include border-radius(50%);
+}
+
+.list:hover .icon-wrapper {
+  background-color: $snow-white;
+}
+
+.list-icon {
+  margin: 1rem;
+  font-size: 1.5rem;
+  color: $snow-white;
+}
+
+.list:hover .list-icon {
+  color: $gray;
+  text-align: center;
+}
+
+.list-title {
+  display: inline-flex;
+  font-family: $primary-font;
+  font-size: 1.25rem;
+  margin-left: 0.75rem;
+}
+
+.list:hover .list-title {
+  color: $snow-white;
+}
+
+.delete-list-form {
+  display: inline;
+  float: right;
+  margin: -0.25rem 0.5rem 0 0;
+}
+
+.btn-delete {
+  margin: 1rem 0;
+  color: $snow-white;
+}
+
+.btn-delete:hover {
+  color: $snow-white;
+}
+// MYLISTS: Create List Form & Footer
+
+.create-container {
+  margin: 3rem 0;
+}
+
+.create-form {
+  width: 90%;
+  padding: 0.25rem;
+  margin: 0 auto;
+  @include border(0.1rem, solid, $light-gray);
+  @include border-radius(2rem);
+}
+
+.create-form .row {
+  margin: 0;
+  padding: 0;
+}
+
+.create-txt-field {
+  width: 95%;
+  border: 0;
+  outline: none;
+  color: $gray;
+  background-color: transparent;
+  margin-left: 0.75rem;
+}
+
+.btn-create {
+  padding: 0;
+  margin: 0 auto;
+  color: $light-gray;
+  @include border-radius(50%);
+}
+
+.btn-create:active,
+.btn-create:hover {
+  color: $gray;
+}
+/**************************
+FOOTER CONTAINER
+***************************/
+.footer-container {
+  width: 100%;
+  height: auto;
+  margin: 1rem auto 0;
+}
+
+.footer-content p {
+  color: $light-gray;
+  text-align: center;
+}
+/**************************
+RIGHT CONTAINER CONTENT
+***************************/
+.list-header {
+  text-transform: uppercase;
+  margin: 2rem 0 1rem -1rem;
+}
+
+.list-count {
+  text-transform: uppercase;
+  margin: 2rem 0 0;
+}
+
+.right-container p {
+  display: inline;
+}
+
+.right-container hr {
+  margin: 0 0 0 3rem;
+}
+
+.item {
+  margin: 0 auto 1.5rem;
+}
+// DISPLAY | UPDATE ITEM
+// ADD ITEM
+
+.delete-form {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.add-form,
+.update-form {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 95%;
+}
+
+.checkbox-wrapper {
+  display: inline-block;
+  margin: 0 0.75rem 0 0;
+  vertical-align: top;
+  outline: none;
+  color: $light-gray;
+}
+
+.strike-through {
+  text-decoration: line-through;
+  text-decoration-color: $gray;
+}
+
+.txt-field {
+  width: 99%;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: $gray;
+  background-color: transparent;
+  @include border-radius(0);
+  padding: 0;
+  margin-left: 0.5rem;
+}
+/*******************************************************************************
+| ERROR PAGE STYLES
+*******************************************************************************/
+@import 'error';
+/*******************************************************************************
+| MOBILE STYLES
+*******************************************************************************/
+// MOBILE IMPORT
+@import 'base/mobile';

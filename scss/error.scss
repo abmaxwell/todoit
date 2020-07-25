@@ -1,0 +1,64 @@
+// main: main.scss
+@import 'base/colors';
+@import 'base/typography';
+@import 'abstracts/mixins';
+
+.left-container-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $snow-white;
+}
+
+.right-container-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $true-white;
+}
+
+.error500 {
+  max-width: 30rem;
+}
+
+.error404 {
+  max-width: 20rem;
+}
+
+.logo-wrapper {
+  width: 90%;
+  padding: 2rem;
+  align-self: center;
+}
+
+.error-container {
+  width: 70%;
+  align-self: center;
+}
+
+.error-container h1 {
+  font-size: 8rem;
+}
+
+.error-container h3 {
+  border-left: 0.3rem solid $fire-red;
+  padding-left: 0.5rem;
+}
+
+.error-container p {
+  line-height: 2;
+}
+
+.error-container a {
+  font-weight: 700;
+  color: $fire-red;
+  text-decoration: none;
+}
+
+.error-container a:hover {
+  color: $sunshine-yellow;
+}

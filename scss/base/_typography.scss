@@ -1,0 +1,22 @@
+// main: ../main.scss
+
+
+// FONT DEFINITIONS
+$primary-font: 'Fredoka One', cursive;
+$secondary-font:'Lato', sans-serif;
+
+
+// FONT USAGE
+h1,
+h2,
+h3{
+  font-family: $primary-font;
+}
+
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: $secondary-font;
+}

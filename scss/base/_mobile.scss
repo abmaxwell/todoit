@@ -1,0 +1,83 @@
+// main: ../main.scss
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins/_breakpoints";
+@import 'colors';
+@import 'typography';
+@import '../abstracts/mixins';
+@import '../error';
+@include media-breakpoint-down(md) {
+  // CONTAINER STYLES
+  .left-container,
+  .right-container {
+    height: 100%;
+    min-height: 0;
+  }
+  // LEFT CONTAINER STYLES
+  .logo-container {
+    margin: 3.5rem auto;
+  }
+
+  .list {
+    padding: 1rem 1rem 0;
+    text-align: center;
+  }
+
+  .list:hover {
+    background-color: transparent;
+  }
+
+  .btn-list {
+    margin: 0 auto;
+  }
+
+  .list:hover .btn-list {
+    color: $gray;
+    text-decoration: none;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .list:hover .icon-wrapper {
+    background-color: $light-gray;
+  }
+
+  .list:hover .list-icon {
+    color: $snow-white;
+  }
+
+  .list-title {
+    display: flex;
+    margin: 1rem 0;
+  }
+
+  .list:hover .list-title {
+    color: $light-gray;
+  }
+  // RIGHT CONTAINER STYLES
+  .list:hover .btn-delete {
+    color: $light-gray;
+  }
+
+  .delete-list-form {
+    display: block;
+    float: none;
+    margin: -2rem 0 0;
+  }
+
+  .create-container {
+    margin: 1rem 0;
+  }
+
+  .btn-create {
+    float: right;
+    margin-right: 1rem;
+  }
+
+  .create-txt-field {
+    width: 100%;
+  }
+}

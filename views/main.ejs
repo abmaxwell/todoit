@@ -1,0 +1,140 @@
+<%- include('partials/head') %>
+
+<div class='container-fluid'>
+  <div class='row'>
+    <!--LEFT CONTAINER-->
+    <div class='col-lg-4 col-xl-3 left-container sticky-top'>
+      <div class='row justify-content-sm-center'>
+        <!-- Top -->
+        <div class='col-12'>
+          <a class='logo-container' href='/'>
+            <img class='img-fluid' src='/img/branding/toDoListLogo_V1WebOptimized.png' alt='ToDoIt Logo'>
+          </a>
+        </div>
+        <!--End Top Column-->
+
+        <!-- Middle -->
+        <div class="col-12">
+          <h4 class='lists-header text-sm-center text-md-left'>My Lists</h4>
+        </div>
+        <% lists.forEach(function(list){%>
+        <div class='col-auto col-lg-12 list'>
+          <a href='/list/<%=list._id%>' id='<%=list._id%>' class='btn-list'>
+
+            <div value='<%=list._id%>' class='icon-wrapper bg-<%=list.color%>'>
+              <span class='list-icon fa fa-<%=list.icon%>'></span>
+            </div>
+            <p class="list-title">
+              <% if(list.name.length > 10){%>
+              <%=list.name.substring(0,10) + ' ...'%>
+              <%} else {%>
+              <%=list.name%>
+              <%}%>
+            </p>
+          </a>
+          <form class='delete-list-form' action='/deletelist' method='post'<%if(list.permanent){%> style='visibility: hidden;'<%}%> >
+          <input type='hidden' name='listID' value='<%=list._id%>'>
+              <button type='button' class='btn btn-delete' onclick='this.form.submit()'><span class='fa fa-times'></span>
+              </button>
+              </form>
+        </div>
+        <%})%>
+        <!--End Middle Columns-->
+        <!--Bottom-->
+        <div class='col-12'>
+          <div class='create-container'>
+
+            <form class='create-form' action='/createlist' method='post'>
+              <div class='row no-gutters'>
+                <div class=' col-11 '>
+                  <input class='create-txt-field' type='text' name='listName' placeholder='List Name' maxlength='100' autocomplete='off' required>
+                </div>
+                <div class=' col-1 text-center'>
+                  <button type='submit' class='btn btn-create' onchange='this.form.submit()'>
+                    <span class='fa fa-plus icon-create'>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class='footer-container'>
+              <div class='footer-content'>
+                <p>© <script type='text/javascript'>
+                    document.write(new Date().getFullYear());
+                  </script> AbM Design Co</p>
+              </div>
+            </div>
+
+          </div>
+          <!--End Create Container-->
+        </div>
+        <!--End Bottom Column-->
+      </div>
+      <!--End Left Outter Row-->
+    </div>
+    <!--END LEFT CONTAINER-->
+
+    <!--RIGHT CONTAINER-->
+    <div class='col-lg-8 col-xl-9 right-container'>
+      <div class="container-fluid">
+        <div class='row'>
+          <!--List Title & Count-->
+          <div class='col-12'>
+            <div class='container-fluid'>
+              <div class='row'>
+                <div class='col-11'>
+                  <h1 class='list-header txt-<%=activeList.color%>'>
+                    <% if(activeList.name.length > 18){%>
+                    <%=activeList.name.substring(0,18)%>
+                    <%} else {%>
+                    <%=activeList.name%>
+                    <%}%>
+                    </h1>
+                  </div>
+                  <div class='col-1 text-right'>
+                    <h1 class='list-count txt-<%=activeList.color%>'><%=activeList.itemsCount%></h1>
+                </div>
+              </div>
+              <!--End Row-->
+            </div>
+            <!--End Container-->
+          </div>
+          <!--End col-12-->
+
+          <!--List Items-->
+          <%activeList.items.forEach(function(item){%>
+          <div class='col-12'>
+            <div class="item">
+              <form class='delete-form' action='/deleteitem' method='post'>
+                <input type='hidden' name='listID' value='<%=activeList._id%>'>
+                <input type='hidden' name='itemID' value='<%=item._id%>'>
+                <button class='checkbox far fa-circle' type='button' onclick='this.form.submit()'></button>
+              </form>
+              <form class='update-form' action='/updateitem' method='post'>
+                <input type='hidden' name='listID' value='<%=activeList._id%>'>
+                <input type='hidden' name='itemID' value='<%=item._id%>'>
+                <input class='txt-field' type='text' name='itemContent' value='<%=item.content%>' autocomplete='off' onchange='this.form.submit()'>
+              </form>
+              <hr>
+            </div>
+          </div>
+          <%});%>
+
+          <!--Add Item Form-->
+          <div class='col-12'>
+            <div class="item">
+              <button class='checkbox far fa-circle' type='button'></button>
+              <form class='add-form' action='/additem' method='post'>
+                <input type='hidden' name='listID' value='<%=activeList._id%>'>
+                <input required class='txt-field' type='text' name='listItem' placeholder='Item Name' autocomplete='off' onchange='this.form.submit()'>
+              </form>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--END RIGHT CONTAINER-->
+  </div> <!-- End Main Row -->
+</div> <!-- End Container Fluid -->
+<%- include('partials/footer') %>

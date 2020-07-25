@@ -1,0 +1,146 @@
+// main: ../main.scss
+@import "../abstracts/mixins";
+// COLOR VARIABLES
+$gray: #485665;
+$light-gray: #e4e4e4;
+$blue-gray: #6c698d;
+$fire-red: #d62828;
+$blazing-orange: #f56416;
+$sunshine-yellow: #fabc3c;
+$mellow-green: #6baa75;
+$snow-white: #fafafa;
+$true-white: #ffffff; // DEAFAULT ELEMENTS
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $gray;
+}
+// BACKGROUND COLOR CLASSES
+
+.bg-gray {
+  background-color: $gray;
+}
+
+.bg-light-gray {
+  background-color: $light-gray;
+}
+
+.bg-blue-gray {
+  background-color: $blue-gray;
+}
+
+.bg-red {
+  background-color: $fire-red;
+}
+
+.bg-orange {
+  background-color: $blazing-orange;
+}
+
+.bg-yellow {
+  background-color: $sunshine-yellow;
+}
+
+.bg-green {
+  background-color: $mellow-green;
+}
+
+.bg-snowWht {
+  background-color: $snow-white;
+}
+
+.bg-trueWht {
+  background-color: $true-white;
+}
+// BUTTON COLOR CLASSES
+
+.btn-gray {
+  background-color: $gray;
+  color: $snow-white;
+}
+
+.btn-light-gray {
+  background-color: $light-gray;
+  color: $snow-white;
+}
+
+.btn-blue-gray {
+  background-color: $blue-gray;
+  color: $snow-white;
+}
+
+.btn-red {
+  background-color: $fire-red;
+  color: $snow-white;
+}
+
+.btn-orange {
+  background-color: $blazing-orange;
+  color: $snow-white;
+}
+
+.btn-yellow {
+  background-color: $sunshine-yellow;
+  color: $snow-white;
+}
+
+.btn-green {
+  background-color: $mellow-green;
+  color: $snow-white;
+}
+
+.btn-snowWht {
+  background-color: $snow-white;
+  color: $gray;
+}
+
+.btn-trueWht {
+  background-color: $true-white;
+  color: $gray;
+}
+// TEXT COLOR CLASSES
+
+.txt-gray {
+  color: $gray;
+}
+
+.txt-light-gray {
+  color: $light-gray;
+}
+
+.txt-blue-gray {
+  color: $blue-gray;
+}
+
+.txt-red {
+  color: $fire-red;
+}
+
+.txt-orange {
+  color: $blazing-orange;
+}
+
+.txt-yellow {
+  color: $sunshine-yellow;
+}
+
+.txt-green {
+  color: $mellow-green;
+}
+
+.txt-blue-gray {
+  color: $blue-gray;
+}
+
+.txt-snowWht {
+  color: $snow-white;
+}
+
+.txt-trueWht {
+  color: $true-white;
+}

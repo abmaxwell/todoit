@@ -1,0 +1,19 @@
+<%- include('partials/head') %>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-xl-6 left-container-error'>
+      <div class="logo-wrapper <%=pageImage.class%>">
+        <img class='img-fluid' src='<%=pageImage.url%>' alt='<%=pageImage.alt%>'>
+      </div>
+    </div>
+    <div class='col-xl-6 right-container-error'>
+      <div class="error-container">
+        <h1><%=statusCode%></h1>
+        <h3><%=errorContent.reason%></h3>
+        <p><%=errorContent.message%></p>
+        <a class='' href='/' type="button"><%=errorContent.btn%></a>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') %>
